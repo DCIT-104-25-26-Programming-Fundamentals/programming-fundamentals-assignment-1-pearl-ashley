@@ -55,3 +55,49 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+
+def print_single_table():
+    # Ask the user for the number
+    num = int(input("Enter a number for the table: "))
+    
+    # Requirement: Must be a positive integer
+    if num <= 0:
+        print("Error: Please enter a positive integer.")
+    else:
+        print()
+        print("Multiplication Table for", num, ":")
+        
+        # Loop from 1 to 12
+        for i in range(1, 13):
+            answer = num * i
+            print(num, " x ", i, " = ", answer)
+
+
+def print_multiple_tables():
+    # Ask the user for the limit N
+    n = int(input("Enter a number N for tables 1 to N: "))
+    
+    # Requirement: Must be a positive integer
+    if n <= 0:
+        print("Error: Please enter a positive integer.")
+    else:
+        # Outer loop controls which table we are printing
+        for current_num in range(1, n + 1):
+            print()
+            print("Multiplication Table for", current_num, ":")
+            
+            # Inner loop prints 1 to 12 for the current table
+            for i in range(1, 13):
+                answer = current_num * i
+                print(current_num, " x ", i, " = ", answer)
+            
+            # Print a separator line after each table
+            print("---------------------------")
+
+
+# --- Main Program ---
+print("--- PART A: Single Table ---")
+print_single_table()
+
+print("\n--- PART B: Tables from 1 to N ---")
+print_multiple_tables()
